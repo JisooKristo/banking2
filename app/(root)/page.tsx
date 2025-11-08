@@ -1,16 +1,13 @@
 'use client';
 
 import HeaderBox from "@/components/HeaderBox";
-import RightSideBar from "@/components/RightSideBar";
+import RightSideBar from "@/components/RightSidebar";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
 import BankCard from "@/components/BankCard";
+import { getLoggedInUser } from "@/lib/actions/user.action";
 
-const Home = () => {
-  const loggedIn = {
-    firstName: "Luis",
-    lastName: "Moratalla",
-    email: "luismiguelmoratalla47@gmail.com",
-  };
+const Home = async () => {
+  const loggedIn = await getLoggedInUser
 
   return (
     <section className="home">
@@ -19,7 +16,7 @@ const Home = () => {
           <HeaderBox
             type="greeting"
             title="Welcome"
-            user={loggedIn?.firstName || "Guest"}
+            user={loggedIn?.name || "Guest"}
             subtext="Access and manage your account and transactions efficiently."
           />
 

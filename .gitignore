@@ -36,3 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 .env.sentry-build-plugin
+<<<<<<< HEAD
+=======
+
+>>>>>>> 44428dde960156926700105ec872c507267acf44
